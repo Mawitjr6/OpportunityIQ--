@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpportunityIQ</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="sidebar">
+  <div class="brand"><span class="logo">IQ</span>OpportunityIQ</div>
+  <nav>
+    <a href="#/dashboard" data-nav="dashboard">Dashboard</a>
+    <a href="#/leads" data-nav="leads">Leads</a>
+    <a href="#/followups" data-nav="followups">Follow-ups</a>
+  </nav>
+  <p class="side-note">AI findings  need human review before they go into a proposal.</p>
+</aside>
+
+<div class="main">
+  <header class="topbar">
+    <h1 id="title"></h1>
+    <button class="btn primary" data-act="new-lead">+ New lead</button>
+  </header>
+  <main id="view"></main>
+</div>
+
+<dialog id="dlg">
+  <form id="leadForm">
+    <h3 id="dlgTitle">Lead</h3>
+    <input type="hidden" name="lid">
+    <div class="fgrid">
+      <label>Company<input name="company" required></label>
+      <label>Contact person<input name="contact" required></label>
+      <label>Email<input name="email" type="email"></label>
+      <label>Phone<input name="phone"></label>
+      <label>Lead source
+        <select name="source"><option>Referral</option><option>Event</option><option>Email</option><option>Website</option><option>Cold outreach</option><option>Other</option></select>
+      </label>
+      <label>Assigned owner<input name="owner"></label>
+      <label>Status<select name="stage" id="stageSel"></select></label>
+    </div>
+    <div class="row"><button class="btn primary">Save lead</button><button type="button" class="btn" data-act="close">Cancel</button></div>
+  </form>
+</dialog>
+
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
